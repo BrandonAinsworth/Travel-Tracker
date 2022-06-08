@@ -4,12 +4,58 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack Starter Kit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200&display=swap" rel="stylesheet">
+  <title>Globetrotter</title>
 </head>
 <body>
-  <img src="./images/turing-logo.png" alt="turing logo">
-  
-  <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
+  <section class="header">
+    <img src="./images/around-the-world.png" class="globe" alt="spinning globe">
+    <div class="welcome">Globetrotter</div>
+    <img src="./images/around-the-world.png" class="globe" alt="spinning globe">
+  </section> 
+  <hr class="line">
+  <div class="welcome-user">Welcome</div>
+  <hr class="line">
+   <section class="interface-wrapper">
+      <section class="buttons">
+        <div class="control-panel">Control Panel</div>
+        <div class="button-side1">
+        <button class="control-button" id="past">Past</button>
+        <button class="control-button" id="present">Present</button>
+        </div>
+        <div class="button-side2">
+        <button class="control-button" id="upcoming">Upcoming</button>
+        <button class="control-button" id="pending">Pending</button>
+      </div>
+      </section>
+      <section class="plan-trip">
+        <form>
+          <div class="plan-header">Plan your next trip!</div><br>
+            <label for="trip-date">Date:</label>
+            <input type="date" id="trip-date" placeholder="YYYY/MM/DD" required /><br>
+            <label for="trip-duration">Duration:</label>
+            <input type="number" id="trip-duration" placeholder="Days" required /><br>
+            <label for="trip-travelers">Number of Travlers:</label>
+            <input type="number" id="trip-travelers" placeholder="Number of Travlers" required /><br>
+            <label for="trip-destination">Choose a Destination:</label>
+              <select id="destination" name="destination">
+                <option value="Peru">Peru</option>
+                <option value="Bahamas">Bahamas</option>
+              </select><br>
+              <div class="costs">Cost:</div>
+              <div class="costs">Agent Fee:</div>
+            <button type="submit" id="submit-trip" class="disable" disabled >Save</button>
+        </form>
+      </section>
+      <section class="total-spent">
+        <div>Total Spent:</div>
+      </section>
+  </section>
+  <hr class="line">
+  <section class="trip-cards">
+    <div class="trips">Trips</div>
+  </section>
+  <hr class="line">
   <script src="bundle.js"></script>
 
 </body>
