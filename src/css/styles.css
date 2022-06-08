@@ -1,3 +1,70 @@
+html {
+  font-family: 'Overpass', sans-serif;
+}
+
 body {
-  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  background: linear-gradient(13deg, #33c9c9, #fff8f0, #275dad);
+  background-size: 600% 600%;
+
+  animation: AnimationName 35s ease infinite;
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line {
+  border-color: rgb(5, 201, 201)
+}
+
+.welcome {
+  font-size: 42px;
+}
+
+.welcome-user {
+  text-align: center;
+}
+
+.globe {
+  height: 50px;
+  width: 50px;
+}
+
+.control-panel {
+  text-align: center;
+}
+
+.interface-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+
+.control-button {
+  height: 73px;
+  width: 110px;
+  margin: 3px;
+  padding: 3px;
+}
+
+.button-side1 , .button-side2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.plan-trip {
+  margin-right: 123px;
+}
+
+.trips {
+  text-align: center;
+  font-size: 25px;
 }
