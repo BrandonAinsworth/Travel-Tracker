@@ -23,7 +23,8 @@ describe ('Destinations', () => {
       expect(destination.destinations).to.deep.equal(destinationSampleData)
     });
 
-    it('should return specific destination by id', () => {
+    it.skip('should return specific destination by id', () => {
       expect(destination.getDestinationById(1)).to.be.equal(sampleDestination[0])
     });
+
 });
