@@ -9,5 +9,6 @@ class Traveler {
         this.pendingTrips = [];
         this.totalSpent = 0;
     }
+    
 }
 export default Traveler;

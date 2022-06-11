@@ -1,11 +1,12 @@
 class Destinations {
     constructor(data){
-        this.id = data.id
-        this.destination = data.destination
-        this.estimatedLodgingCostPerDay = data.estimatedLodgingCostPerDay
-        this.estimatedFlightCostPerPerson = data.estimatedFlightCostPerPerson
-        this.image = data.image
-        this.alt = data.alt
+        this.destinations = data
+    }
+    //retreive specific destinations method by id
+    getDestinationById(id){
+
+        let destFilter = this.destinations.filter(dest => id === dest.id)
+        return destFilter[0];
     }
 }
 export default Destinations
