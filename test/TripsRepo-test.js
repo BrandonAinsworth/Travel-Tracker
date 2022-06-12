@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import TripsRepo from '../src/TripsRepo';
 import { tripsSampleData , tripsForOneUserSample } from './Sample-trips-data'
 
-describe ('Trips', () => {
+describe ('TripRepo', () => {
 
     let tripsRepo;
     let tripsForOneUser;
@@ -24,4 +24,4 @@ describe ('Trips', () => {
         expect(tripsRepo.returnSpecficTripsForUser(29)).to.deep.equal(tripsForOneUser)
         expect(tripsRepo.returnSpecficTripsForUser(1000)).to.deep.equal("You don't have any trips! But worry not, you're in the right place!")
     });
-})  
+});  
