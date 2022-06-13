@@ -38,4 +38,6 @@ const travelerSampleData = [{
     "name": "Carlin O'Reilly",
     "travelerType": "history buff"
     }];
+
+    
     export default travelerSampleData;

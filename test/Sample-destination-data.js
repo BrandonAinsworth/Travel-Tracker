@@ -54,6 +54,61 @@ const destinationSampleData = [
     "estimatedFlightCostPerPerson": 395,
     "image": "https://images.unsplash.com/photo-1524396309943-e03f5249f002?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
     "alt": "city during the day time with eiffel tower"
+    },
+    {
+    "id": 8,
+    "destination": "Tokyo, Japan",
+    "estimatedLodgingCostPerDay": 125,
+    "estimatedFlightCostPerPerson": 1000,
+    "image": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1971&q=80",
+    "alt": "city with people walking in crosswalk and brightly lit shops at night"
+    },
+    {
+    "id": 9,
+    "destination": "Amsterdam, Netherlands",
+    "estimatedLodgingCostPerDay": 100,
+    "estimatedFlightCostPerPerson": 950,
+    "image": "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    "alt": "canal with boats and trees and buildings along the side"
+    },
+    {
+    "id": 10,
+    "destination": "Toronto, Canada",
+    "estimatedLodgingCostPerDay": 90,
+    "estimatedFlightCostPerPerson": 450,
+    "image": "https://images.unsplash.com/photo-1535776142635-8fa180c46af7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2756&q=80"
+    },
+    {
+    "id": 11,
+    "destination": "Mikonos, Greece",
+    "estimatedLodgingCostPerDay": 140,
+    "estimatedFlightCostPerPerson": 1000,
+    "image": "https://images.unsplash.com/photo-1573783309724-e44b859f5a85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80",
+    "alt": "cityscape along the water during the day"
+    },
+    {
+    "id": 12,
+    "destination": "Wellington, New Zealand",
+    "estimatedLodgingCostPerDay": 150,
+    "estimatedFlightCostPerPerson": 1200,
+    "image": "https://images.unsplash.com/photo-1442483221814-59f7d8b22739?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    "alt": "overview of city with buildings, water and trees"
+    },
+    {
+    "id": 35,
+    "destination": "Anchorage, Alaska",
+    "estimatedLodgingCostPerDay": 200,
+    "estimatedFlightCostPerPerson": 100,
+    "image": "https://images.unsplash.com/photo-1539545547102-90ae2c140089?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    "alt": "man riding on kayak surrounded by mountains"
+    },
+    {
+    "id": 23,
+    "destination": "Copenhagen, Denmark",
+    "estimatedLodgingCostPerDay": 120,
+    "estimatedFlightCostPerPerson": 1000,
+    "image": "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+    "alt": "colorful buildings with holiday decorations by the water with tents and docked boats"
     }
 ]
 export default destinationSampleData;

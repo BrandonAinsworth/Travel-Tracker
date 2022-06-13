@@ -1,14 +1,16 @@
+import TravelerRepo from "./TravelerRepo";
+import Trips from '../src/Trips'
 class Traveler {
     constructor(data){
-        this.id = data.id
-        this.name = data.name
-        this.travelerType = data.travelerType
+        this.id;
+        this.name;
+        this.travelerType;
+        this.allTrips = [];
         this.pastTrips = [];
         this.currentTrips = [];
         this.upcomingTrips = [];
         this.pendingTrips = [];
-        this.totalSpent = 0;
+        this.totalSpentForYear = 0;
     }
-  
 }
 export default Traveler;

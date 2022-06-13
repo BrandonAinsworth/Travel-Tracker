@@ -19,6 +19,6 @@ class Trip {
     //method to add agent fee
     //method to retrieve trips from a certain frame
     //method to POST new trip to database and add to pending trips
-    
+    //Trips.js, Travelers.js, Desitnations.js, DataRepository.js
 }
 export default Trip
