@@ -168,6 +168,5 @@ describe ('DataRepo', () => {
 
     it('should return total amount a traveler spent for the year', () => {
         expect(currentUser.totalSpentForYear).to.be.equal(27984)
-
     });
 });

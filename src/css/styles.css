@@ -68,3 +68,8 @@ body {
   text-align: center;
   font-size: 25px;
 }
+
+.card-image {
+  height:70em;
+  width: 70em;
+}
