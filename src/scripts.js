@@ -75,11 +75,13 @@ function getData(){
   }
 
 function populateTravelerTrips(){
-    currentTraveler.returnTripsForCurrentTraveler(id)
-    currentTraveler.returnPastTripsForCurrentTraveler()
-    currentTraveler.returnUpcomingTripsForCurrentTraveler()
-    currentTraveler.returnCurrentTripsForCurrentTraveler()
-    currentTraveler.returnPendingTripsForCurrentTraveler()
+    let userTrips = dataRepo.trips.trips
+    currentTraveler.returnTripsForCurrentTraveler(userTrips)
+    let dateOfToday = dataRepo.date
+    currentTraveler.returnPastTripsForCurrentTraveler(dateOfToday)
+    currentTraveler.returnUpcomingTripsForCurrentTraveler(dateOfToday)
+    currentTraveler.returnCurrentTripsForCurrentTraveler(dateOfToday)
+    currentTraveler.returnPendingTripsForCurrentTraveler(dateOfToday)
 }
 
 function getUserTotalSpent() {

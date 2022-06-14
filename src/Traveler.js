@@ -16,10 +16,10 @@ class Traveler {
         return firstName
     }
     returnTripsForCurrentTraveler(trips) {
-        console.log('TRIPS',trips)
         trips.forEach(trip => {
             if (trip.userID === this.id) {
                 this.allTrips.push(trip)
+                console.log('please',this.allTrips)
             }
         })
     }
