@@ -26,10 +26,11 @@ const pendingButton = document.getElementById('pending');
 const saveTripButton = document.getElementById('submit-trip');
 const totalYearSpent = document.querySelector('.total-year');
 const welcomeUser = document.querySelector('.welcome-user');
-const tripCards = document.querySelector('.trips-cards')
-const dropDown = document.getElementById('destination')
-const form = document.querySelector('.plan-new-trip')
-const costs = document.querySelector('.costs')
+const tripCards = document.querySelector('.trips-cards');
+const dropDown = document.getElementById('destination');
+const form = document.querySelector('.plan-new-trip');
+const costs = document.querySelector('.costs');
+const catchError = document.querySelector('.catch-error');
 //EVENT LISTENERS
 pastButton.addEventListener('click', () => {
     populatePastTrips()
@@ -68,14 +69,12 @@ function getData(){
     })
     .catch(error => {
       console.log(error)
-    //   catchError.innerText = 'We have encountered an error retrieving your data.'
+      catchError.innerText = 'We have encountered an error retrieving your data.'
     });
   }
 
 function populateTravelerTrips(){
-    // console.log('pending',dataRepo.currentTraveler.allTrips)
     dataRepo.returnTripsForCurrentTraveler(id)
-    // console.log('pending2',dataRepo.currentTraveler.allTrips)
     dataRepo.returnPastTripsForCurrentTraveler()
     dataRepo.returnUpcomingTripsForCurrentTraveler()
     dataRepo.returnCurrentTripsForCurrentTraveler()
@@ -97,15 +96,15 @@ function populatePastTrips() {
             return tripCards.innerText = 'No Current Trips';
         } else {
         return `
-        <article class="card">
-        <h4 class="card-destination">${destination.destination}</h4>
-        <p class="card-status">Hope you had fun!</p>
-        <img class="card-image" src="${destination.image}" alt="alt-text">
-        <p class="card-date">Departure date requested: ${trip.date}</p>
-        <p class="card-duration">Travelers: ${trip.travelers}</p>
-        <p class="card-duration">Nights requested: ${trip.duration}</p>
-        <p class="card-lodging">Nightly cost: $${destination.estimatedLodgingCostPerDay}</p>
-        <p class="card-flights">Estimated flight cost per person: $${destination.estimatedFlightCostPerPerson}</p>
+        <article tabindex="0 class="trip-cards">
+        <h4 tabindex="0 class="trip-destination">${destination.destination}</h4>
+        <p tabindex="0 class="trip-status">Hope you had fun!</p>
+        <img tabindex="0 class="trip-image" src="${destination.image}" alt="alt-text">
+        <p tabindex="0 class="trip-date">Departure Date: ${trip.date}</p>
+        <p tabindex="0 class="trip-duration">Travelers: ${trip.travelers}</p>
+        <p tabindex="0 class="trip-duration">Nights: ${trip.duration}</p>
+        <p tabindex="0 class="trip-lodging">Cost per Night: $${destination.estimatedLodgingCostPerDay}</p>
+        <p tabindex="0 class="trip-flights">Flight Cost per Person: $${destination.estimatedFlightCostPerPerson}</p>
       </article>
       <hr class="line">`
     }
@@ -121,15 +120,15 @@ function populateUpcomingTrips() {
                return tripCards.innerText = 'No Current Trips';
            } else {
            return `
-           <article class="card">
-           <h4 class="card-destination">${destination.destination}</h4>
-           <p class="card-status">Your trip is currently ${trip.status}.</p>
-           <img class="card-image" src="${destination.image}" alt="alt-text">
-           <p class="card-date">Departure date requested: ${trip.date}</p>
-           <p class="card-duration">Travelers: ${trip.travelers}</p>
-           <p class="card-duration">Nights requested: ${trip.duration}</p>
-           <p class="card-lodging">Nightly cost: $${destination.estimatedLodgingCostPerDay}</p>
-           <p class="card-flights">Estimated flight cost per person: $${destination.estimatedFlightCostPerPerson}</p>
+           <article tabindex="0 class="trip-cards">
+           <h4 tabindex="0 class="trip-destination" >${destination.destination}</h4>
+           <p tabindex="0 class="trip-status">Your trip is currently ${trip.status}!</p>
+           <img tabindex="0 class="trip-image" src="${destination.image}" alt="alt-text">
+           <p tabindex="0 class="trip-date">Departure Date: ${trip.date}</p>
+           <p tabindex="0 class="trip-duration">Travelers: ${trip.travelers}</p>
+           <p tabindex="0 class="trip-duration">Nights: ${trip.duration}</p>
+           <p tabindex="0 class="trip-lodging">Cost per Night: $${destination.estimatedLodgingCostPerDay}</p>
+           <p tabindex="0 class="trip-flights">Flight Cost per Person: $${destination.estimatedFlightCostPerPerson}</p>
          </article>
          <hr class="line">`
         }
@@ -147,15 +146,15 @@ function populateUpcomingTrips() {
            return tripCards.innerText = 'No Current Trips';
            } else {
            return `
-           <article class="card">
-           <h4 class="card-destination">${destination.destination}</h4>
-           <p class="card-status">Your trip is currently ${trip.status}.</p>
-           <img class="card-image" src="${destination.image}" alt="alt-text">
-           <p class="card-date">Departure date requested: ${trip.date}</p>
-           <p class="card-duration">Travelers: ${trip.travelers}</p>
-           <p class="card-duration">Nights requested: ${trip.duration}</p>
-           <p class="card-lodging">Nightly cost: $${destination.estimatedLodgingCostPerDay}</p>
-           <p class="card-flights">Estimated flight cost per person: $${destination.estimatedFlightCostPerPerson}</p>
+           <article tabindex="0 class="trip-cards">
+           <h4 tabindex="0 class="trip-destination">${destination.destination}</h4>
+           <p tabindex="0 class="trip-status">Your trip is currently pending.</p>
+           <img tabindex="0 class="trip-image" src="${destination.image}" alt="alt-text">
+           <p tabindex="0 class="trip-date">Requested Departure Date: ${trip.date}</p>
+           <p tabindex="0 class="trip-duration">Travelers: ${trip.travelers}</p>
+           <p tabindex="0 class="trip-duration">Nights Requested: ${trip.duration}</p>
+           <p tabindex="0 class="trip-lodging">Cost per Night: $${destination.estimatedLodgingCostPerDay}</p>
+           <p tabindex="0 class="trip-flights">Flight Cost per Person: $${destination.estimatedFlightCostPerPerson}</p>
          </article>
          <hr class="line">`
            }
@@ -172,15 +171,15 @@ function populateUpcomingTrips() {
                return tripCards.innerText = 'No Current Trips';
            } else {
            return `
-           <article class="card">
-           <h4 class="card-destination">${destination.destination}</h4>
-           <p class="card-status">Your trip is currently underway!</p>
-           <img class="card-image" src="${destination.image}" alt="alt-text">
-           <p class="card-date">Departure date requested: ${trip.date}</p>
-           <p class="card-duration">Travelers: ${trip.travelers}</p>
-           <p class="card-duration">Nights requested: ${trip.duration}</p>
-           <p class="card-lodging">Nightly cost: $${destination.estimatedLodgingCostPerDay}</p>
-           <p class="card-flights">Estimated flight cost per person: $${destination.estimatedFlightCostPerPerson}</p>
+           <article tabindex="0 class="trip-cards">
+           <h4 tabindex="0 class="trip-destination">${destination.destination}</h4>
+           <p tabindex="0 class="trip-status">Your trip is currently underway!</p>
+           <img tabindex="0 class="trip-image" src="${destination.image}" alt="alt-text">
+           <p tabindex="0 class="trip-date">Departure Date: ${trip.date}</p>
+           <p tabindex="0 class="trip-duration">Travelers: ${trip.travelers}</p>
+           <p tabindex="0 class="trip-duration">Nights requested: ${trip.duration}</p>
+           <p tabindex="0 class="trip-lodging">Cost per Night: $${destination.estimatedLodgingCostPerDay}</p>
+           <p tabindex="0 class="trip-flights">Flight Cost per Person: $${destination.estimatedFlightCostPerPerson}</p>
          </article>
          <hr class="line">`
            }
@@ -191,7 +190,7 @@ function populateUpcomingTrips() {
 function populateDestinationOptions() {
     dataRepo.destinations.destinations.forEach(destination => {
         dropDown.innerHTML += `
-        <option name='destinationID' value="${destination.id}">${destination.destination}</option>
+        <option tabindex="0" name='destinationID' value="${destination.id}">${destination.destination}</option>
         `
     })
 }
