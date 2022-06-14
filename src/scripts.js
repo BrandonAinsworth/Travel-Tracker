@@ -26,11 +26,18 @@ const pendingButton = document.getElementById('pending');
 const saveTripButton = document.getElementById('submit-trip');
 const totalYearSpent = document.querySelector('.total-year');
 const welcomeUser = document.querySelector('.welcome-user');
+const wecomeUserLogIn = document.querySelector('.welcome-user-login')
 const tripCards = document.querySelector('.trips-cards');
 const dropDown = document.getElementById('destination');
 const form = document.querySelector('.plan-new-trip');
 const costs = document.querySelector('.costs');
 const catchError = document.querySelector('.catch-error');
+const logInButton = document.querySelector('.log-in-button');
+// const travelerUserName = document.querySelector('.username');
+// const password = document.querySelector('.password');
+const bodyWrapper = document.querySelector('.body-wrapper');
+const logInWrapper = document.querySelector('.log-in')
+const userValidate = document.querySelector('.user-validate')
 //EVENT LISTENERS
 pastButton.addEventListener('click', () => {
     populatePastTrips()
@@ -44,24 +51,51 @@ pendingButton.addEventListener('click', () => {
 currentButton.addEventListener('click', () => {
     populateCurrentTrips()
 })
+
+logInButton.addEventListener('click', (event) => {
+    event.preventDefault()
+    logIn()
+})
 //FUNCTIONS
 const getRandomID = () => {
     return Math.floor(Math.random() * 50);
   }
 
-const id = 10
+let id;
 
-getData()
+
+
+function logIn() {
+const travelerUserName = document.querySelector('.username');
+const password = document.querySelector('.password');
+if(travelerUserName.value && password.value && password.value === 'travel' && travelerUserName.value.includes('traveler')){
+    id = parseInt(travelerUserName.value.slice(8))
+    logInWrapper.classList.add('hidden')
+    bodyWrapper.classList.remove('hidden')
+    getData()
+} else {
+   const reAssign = () => {
+        return userValidate.innerText = "Incorrect username or password"
+    }
+    let thisTimeout = setTimeout(reAssign, 5000)
+    return thisTimeout;
+}
+
+}
+
+
+
 
 function helloUser(){
-    let userName = dataRepo.returnCurrentTravelerFirstName()
-    welcomeUser.innerText = `Welcome, ${userName}`
+    let usersName = dataRepo.returnCurrentTravelerFirstName()
+    wecomeUserLogIn.innerText = `Welcome, ${usersName}`
+    welcomeUser.innerText = `Welcome, ${usersName}`
 }
 
 function getData(){
     promise.then(data => {
       dataRepo = new DataRepo(data);
-      individual = (dataRepo.returnCurrentTravelerById(id));
+      individual = dataRepo.returnCurrentTravelerById(id)
       populateTravelerTrips()
       getUserTotalSpent()
       helloUser()

@@ -15,11 +15,11 @@ class DataRepo {
         this.date = dayjs().format('YYYY/MM/DD')
     }
     returnCurrentTravelerById(id){
-        let travlerInfo = this.travelers.travelers.find(traveler => id === traveler.id)
-        this.currentTraveler.id = travlerInfo.id
-        this.currentTraveler.name = travlerInfo.name
-        this.currentTraveler.travelerType = travlerInfo.travelerType
-        return travlerInfo
+        let travelerInfo = this.travelers.travelers.find(traveler => id === traveler.id)
+        this.currentTraveler.id = travelerInfo.id
+        this.currentTraveler.name = travelerInfo.name
+        this.currentTraveler.travelerType = travelerInfo.travelerType
+        return travelerInfo
     }
     returnCurrentTravelerFirstName() {
         let firstName = this.currentTraveler.name.split(' ')[0]

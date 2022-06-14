@@ -73,3 +73,7 @@ body {
   height:70em;
   width: 70em;
 }
+
+.hidden {
+  display: none;
+}

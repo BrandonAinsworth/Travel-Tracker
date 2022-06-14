@@ -8,6 +8,18 @@
   <title>Globetrotter</title>
 </head>
 <body>
+  <section class="log-in">
+    <div class="welcome-user-login">Welcome to Globetrotter!<br>Log-In</div>
+    <form>
+            <label tabindex="0"for="username">Username:</label>
+            <input tabindex="0" class="username" name="username" type="text"required /><br>
+            <label tabindex="0"for="trip-duration">Password:</label>
+            <input tabindex="0" class="password" type="password" name="password" required /><br>
+            <button class="log-in-button" type="submit">Submit</button>
+            <div class="user-validate"></div>
+    </form>
+  </section>
+<section class="body-wrapper hidden">
   <section class="header">
     <img src="./images/around-the-world.png" class="globe" alt="spinning globe">
     <div tabindex="0"class="welcome">Globetrotter</div>
@@ -59,6 +71,6 @@
   </section>
   <hr class="line">
   <script src="bundle.js"></script>
-
+</section>
 </body>
 </html>
