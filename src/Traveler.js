@@ -1,7 +1,5 @@
-import TravelerRepo from "./TravelerRepo";
-import Trips from '../src/Trips'
 class Traveler {
-    constructor(data){
+    constructor(){
         this.id;
         this.name;
         this.travelerType;
@@ -10,7 +8,7 @@ class Traveler {
         this.currentTrips = [];
         this.upcomingTrips = [];
         this.pendingTrips = [];
-        this.totalSpentForYear = 0;
+        this.totalSpentForYear;
     }
 }
 export default Traveler;

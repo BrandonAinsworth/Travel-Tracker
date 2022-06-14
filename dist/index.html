@@ -21,7 +21,7 @@
         <div class="control-panel">Control Panel</div>
         <div class="button-side1">
         <button class="control-button" id="past">Past</button>
-        <button class="control-button" id="present">Present</button>
+        <button class="control-button" id="present">Current</button>
         </div>
         <div class="button-side2">
         <button class="control-button" id="upcoming">Upcoming</button>
@@ -29,31 +29,33 @@
       </div>
       </section>
       <section class="plan-trip">
-        <form>
+        <form class="plan-new-trip">
           <div class="plan-header">Plan your next trip!</div><br>
             <label for="trip-date">Date:</label>
-            <input type="date" id="trip-date" placeholder="YYYY/MM/DD" required /><br>
+            <input type="date" name='date' id="trip-date" placeholder="YYYY/MM/DD" required /><br>
             <label for="trip-duration">Duration:</label>
-            <input type="number" id="trip-duration" placeholder="Days" required /><br>
+            <input type="number" name="duration" id="trip-duration" placeholder="Days" required /><br>
             <label for="trip-travelers">Number of Travlers:</label>
-            <input type="number" id="trip-travelers" placeholder="Number of Travlers" required /><br>
+            <input type="number" name="travelers" id="trip-travelers" placeholder="Number of Travlers" required /><br>
             <label for="trip-destination">Choose a Destination:</label>
-              <select id="destination" name="destination">
-                <option value="Peru">Peru</option>
-                <option value="Bahamas">Bahamas</option>
+              <select id="destination" name="destinate">
               </select><br>
-              <div class="costs">Cost:</div>
-              <div class="costs">Agent Fee:</div>
-            <button type="submit" id="submit-trip" class="disable" disabled >Save</button>
+              <div class="costs">Cost with Agent Fee: </div>
+            <input type="submit" id="submit-trip" ></button> 
+            <!-- class="disable" disabled -->
         </form>
       </section>
       <section class="total-spent">
-        <div>Total Spent:</div>
+        <label for="total-year">Spent this Year:</label>
+        <div class="total-year">Total Spent:</div>
       </section>
   </section>
   <hr class="line">
-  <section class="trip-cards">
+  <section class="trips-header">
     <div class="trips">Trips</div>
+  </section>
+  <section class="trips-cards">
+
   </section>
   <hr class="line">
   <script src="bundle.js"></script>

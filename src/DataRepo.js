@@ -8,15 +8,17 @@ import destinationSampleData from "../test/Sample-destination-data";
 
 class DataRepo {
     constructor(data){
-        this.travelers = data.travelers
-        this.trips = data.trips
-        this.destinations = data.destinations
+        this.travelers = data[0]
+        this.trips = data[1]
+        this.destinations = data[2]
         this.currentTraveler = new Traveler()
         this.date = dayjs().format('YYYY/MM/DD')
     }
     returnCurrentTravelerById(id){
-        let travlerInfo = this.travelers.find(traveler => id === traveler.id)
-        this.currentTraveler = travlerInfo
+        let travlerInfo = this.travelers.travelers.find(traveler => id === traveler.id)
+        this.currentTraveler.id = travlerInfo.id
+        this.currentTraveler.name = travlerInfo.name
+        this.currentTraveler.travelerType = travlerInfo.travelerType
         return travlerInfo
     }
     returnCurrentTravelerFirstName() {
@@ -24,15 +26,22 @@ class DataRepo {
         return firstName
     }
     returnDestinationById(id){
-        let destFilter = this.destinations.find(dest => id === dest.id)
+        let destFilter = this.destinations.destinations.find(dest => {
+          return id === dest.id
+        }) 
         return destFilter
     }
     returnTripsForCurrentTraveler(id){
-        return this.trips.filter(trip =>  {
-            if (trip.userID === id){
-            return this.currentTraveler.allTrips.push(trip)
-            }
-        });
+        this.trips.trips.forEach(trip => {
+        if (trip.userID === id){
+             this.currentTraveler.allTrips.push(trip)
+        }
+        })
+        // return this.trips.trips.filter(trip =>  {
+        //     if (trip.userID === id){
+        //     return this.currentTraveler.allTrips.push(trip)
+        //     }
+        // });
     }
     returnPastTripsForCurrentTraveler(){
        let pastTrips = this.currentTraveler.allTrips.filter(trip => {
@@ -43,15 +52,15 @@ class DataRepo {
                 return trip.date < this.date
              }
            })
-           return this.currentTraveler.pastTrips.push(pastTrips);
+           return this.currentTraveler.pastTrips = pastTrips;
     }
     returnUpcomingTripsForCurrentTraveler(){
-        let pastTrips = this.currentTraveler.allTrips.filter(trip => {
+        let upcomingTrips = this.currentTraveler.allTrips.filter(trip => {
             if(trip.status === 'approved'){
             return trip.date > this.date
             }
         })
-            return this.currentTraveler.upcomingTrips.push(pastTrips);
+            return this.currentTraveler.upcomingTrips = upcomingTrips;
     }
     returnCurrentTripsForCurrentTraveler(){
             let currentTrips = this.currentTraveler.allTrips.filter(trip => {
@@ -62,13 +71,12 @@ class DataRepo {
                 return trip
             }
         })
-            return this.currentTraveler.currentTrips.push(currentTrips);
+            return this.currentTraveler.currentTrips = currentTrips
     }
     returnPendingTripsForCurrentTraveler(){
-        let pendingTrips = this.currentTraveler.allTrips.filter(trip => {
-            return trip.status === 'pending'
-        })
-            return this.currentTraveler.pendingTrips.push(pendingTrips);
+        let pendingTrips = this.currentTraveler.allTrips.filter(trip => trip.status === 'pending')
+        // console.log(pendingTrips)
+            return this.currentTraveler.pendingTrips = pendingTrips;
     }
     calculateTripCost(trip, destination) {
         let lodging = destination.estimatedLodgingCostPerDay * trip.duration;
@@ -81,7 +89,7 @@ class DataRepo {
     calculateTotalSpentThisYear(){
         let total = this.currentTraveler.allTrips.reduce((acc, trip) => {
             if(trip.date.includes('2022')){
-            let destination = this.destinations.find(destination => {
+            let destination = this.destinations.destinations.find(destination => {
                return (trip.destinationID === destination.id)
             })
             acc += this.calculateTripCost(trip, destination)
