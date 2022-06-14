@@ -1,13 +1,9 @@
 import { expect } from 'chai';
 import DataRepo from '../src/DataRepo';
-import Destination from '../src/Destination';
 import dayjs from "dayjs"
 import { promise } from './apiCalls';
 import Traveler from './Traveler';
-// An example of how you tell webpack to use a CSS (SCSS) file
 import './css/styles.css';
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
 import './images/around-the-world.png'
 
@@ -17,6 +13,7 @@ import './images/around-the-world.png'
 let dataRepo;
 let individual;
 let newTrip;
+let currentTraveler;
 
 //QUERY SELECTORS
 const pastButton = document.getElementById('past');
@@ -31,6 +28,7 @@ const dropDown = document.getElementById('destination');
 const form = document.querySelector('.plan-new-trip');
 const costs = document.querySelector('.costs');
 const catchError = document.querySelector('.catch-error');
+
 //EVENT LISTENERS
 pastButton.addEventListener('click', () => {
     populatePastTrips()
@@ -54,7 +52,8 @@ const id = 10
 getData()
 
 function helloUser(){
-    let userName = dataRepo.returnCurrentTravelerFirstName()
+    console.log('HELLO USER')
+    let userName = currentTraveler.returnCurrentTravelerFirstName()
     welcomeUser.innerText = `Welcome, ${userName}`
 }
 
@@ -62,10 +61,12 @@ function getData(){
     promise.then(data => {
       dataRepo = new DataRepo(data);
       individual = (dataRepo.returnCurrentTravelerById(id));
+      currentTraveler = new Traveler(individual)
+      helloUser()
       populateTravelerTrips()
       getUserTotalSpent()
-      helloUser()
       populateDestinationOptions()
+    //   console.log()
     })
     .catch(error => {
       console.log(error)
@@ -74,15 +75,15 @@ function getData(){
   }
 
 function populateTravelerTrips(){
-    dataRepo.returnTripsForCurrentTraveler(id)
-    dataRepo.returnPastTripsForCurrentTraveler()
-    dataRepo.returnUpcomingTripsForCurrentTraveler()
-    dataRepo.returnCurrentTripsForCurrentTraveler()
-    dataRepo.returnPendingTripsForCurrentTraveler()
+    currentTraveler.returnTripsForCurrentTraveler(id)
+    currentTraveler.returnPastTripsForCurrentTraveler()
+    currentTraveler.returnUpcomingTripsForCurrentTraveler()
+    currentTraveler.returnCurrentTripsForCurrentTraveler()
+    currentTraveler.returnPendingTripsForCurrentTraveler()
 }
 
 function getUserTotalSpent() {
-    let totalSpent = dataRepo.calculateTotalSpentThisYear()
+    let totalSpent = currentTraveler.calculateTotalSpentThisYear()
     if(totalSpent === 0){
         totalYearSpent.innerText = "No trips this year"
     } else {
@@ -90,7 +91,7 @@ function getUserTotalSpent() {
     }
 }
 function populatePastTrips() {
- const pastTripTemplate = dataRepo.currentTraveler.pastTrips.map(trip => {
+ const pastTripTemplate = currentTraveler.pastTrips.map(trip => {
         let destination = dataRepo.returnDestinationById(trip.destinationID)
         if(!destination) {
             return tripCards.innerText = 'No Current Trips';
@@ -112,7 +113,7 @@ function populatePastTrips() {
     tripCards.innerHTML = pastTripTemplate
 }
 function populateUpcomingTrips() {
-    const upcomingTripTemplate = dataRepo.currentTraveler.upcomingTrips.map(trip => {
+    const upcomingTripTemplate = currentTraveler.upcomingTrips.map(trip => {
            let destination = dataRepo.returnDestinationById(trip.destinationID)
         //    console.log(destination)
            if(!destination) {
@@ -138,7 +139,7 @@ function populateUpcomingTrips() {
    
    function populatePendingTrips() {
        console.log('hello')
-    const pendingTripTemplate = dataRepo.currentTraveler.pendingTrips.map(trip => {
+    const pendingTripTemplate = currentTraveler.pendingTrips.map(trip => {
            let destination = dataRepo.returnDestinationById(trip.destinationID)
         //    console.log(destination)
            if(!destination){
@@ -163,7 +164,7 @@ function populateUpcomingTrips() {
    }
 
    function populateCurrentTrips() {
-    const currentTripTemplate = dataRepo.currentTraveler.currentTrips.map(trip => {
+    const currentTripTemplate = currentTraveler.currentTrips.map(trip => {
            let destination = dataRepo.returnDestinationById(trip.destinationID)
         //    console.log(destination)
            if(!destination) {
@@ -196,7 +197,6 @@ function populateDestinationOptions() {
 }
 
 function postNewTrip(newTrip){
-    // console.log(newTrip)
     return fetch('http://localhost:3001/api/v1/trips', {
       method: 'POST',
       body: JSON.stringify(newTrip),
@@ -206,15 +206,12 @@ function postNewTrip(newTrip){
       .catch(error => console.log('Error'))
 }
 
-
-
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
       newTrip = {
       id: dataRepo.trips.trips.length + 1,
-      userID: dataRepo.currentTraveler.id ,
+      userID: currentTraveler.id ,
       destinationID: parseInt(formData.get('destinate')),
       travelers: parseInt(formData.get('travelers')),
       date: formData.get('date').split('-').join('/'),

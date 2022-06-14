@@ -1,0 +1,16 @@
+import trips from './Sample-trips-data'
+import destinations from './Sample-destination-data';
+import travelers from './Sample-traveler-data'
+
+const sampleData = [
+{
+    travelers
+},
+{
+    trips
+},
+{
+    destinations
+}
+]
+export default sampleData
