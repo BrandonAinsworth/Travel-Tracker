@@ -31,9 +31,6 @@ describe('Traveler', () => {
     });
 
     it('should return all trips for current traveler', () => {
-        // dataRepo.returnCurrentTravelerById(29)`
-        traveler1.returnTripsForCurrentTraveler(tripsSampleData)
-        // console.log(traveler1)
     const tripsForOneUserSample = [{
     "id": 6,
     "userID": 29,
@@ -104,6 +101,7 @@ describe('Traveler', () => {
     "status": "pending",
     "suggestedActivities": []
     }]   
+
         expect(traveler1.allTrips).to.deep.equal(tripsForOneUserSample)
         // expect(dataRepo.returnTripsForCurrentTraveler(1000)).to.deep.equal("You don't have any trips! But worry not, you're in the right place!")
     });
@@ -145,9 +143,10 @@ describe('Traveler', () => {
         expect(traveler1.pastTrips).to.deep.equal(userPast)
     });
 
-    it.skip('should return upcoming trips for current traveler', () => {
+    it('should return upcoming trips for current traveler', () => {
+        traveler1.returnUpcomingTripsForCurrentTraveler("2022/06/14")
         let userUpcoming = [
-            [{
+            {
                     "id": 6,
                     "userID": 29,
                     "destinationID": 35,
@@ -166,15 +165,15 @@ describe('Traveler', () => {
                     "duration": 7,
                     "status": "approved",
                     "suggestedActivities": []
-                }
-            ]
+                } 
         ]
-        expect(currentUser.upcomingTrips).to.deep.equal(userUpcoming);
+        expect(traveler1.upcomingTrips).to.deep.equal(userUpcoming);
     });
 
-    it.skip('should return current trips for current traveler', () => {
+    it('should return current trips for current traveler', () => {
+        traveler1.returnCurrentTripsForCurrentTraveler("2022/06/14")
         let userCurrent = [
-            [{
+            {
                 "id": 400,
                 "userID": 29,
                 "destinationID": 12,
@@ -183,15 +182,16 @@ describe('Traveler', () => {
                 "duration": 7,
                 "status": "approved",
                 "suggestedActivities": []
-            }]
+            }
         ]
 
-        expect(currentUser.currentTrips).to.deep.equal(userCurrent)
+        expect(traveler1.currentTrips).to.deep.equal(userCurrent)
     });
 
-    it.skip('should return pending trips for current traveler', () => {
+    it('should return pending trips for current traveler', () => {
+        traveler1.returnPendingTripsForCurrentTraveler()
         let userPending = [
-            [{
+            {
                 "id": 401,
                 "userID": 29,
                 "destinationID": 12,
@@ -200,13 +200,9 @@ describe('Traveler', () => {
                 "duration": 7,
                 "status": "pending",
                 "suggestedActivities": []
-            }]
+            }
         ]
-        expect(currentUser.pendingTrips).to.deep.equal(userPending)
-    });
-
-    it.skip('should return total amount a traveler spent for the year', () => {
-        expect(currentUser.totalSpentForYear).to.be.equal(27984)
+        expect(traveler1.pendingTrips).to.deep.equal(userPending)
     });
 
 });

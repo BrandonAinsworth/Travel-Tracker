@@ -1,8 +1,5 @@
 import Traveler from "./Traveler";
 import dayjs from "dayjs";
-import Destination from "./Destination";
-import Trip from "./Trips";
-import { use } from "chai";
 
 class DataRepo {
     constructor(data) {

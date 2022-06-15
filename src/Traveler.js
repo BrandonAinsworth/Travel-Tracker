@@ -1,4 +1,3 @@
-import DataRepo from "./DataRepo";
 class Traveler {
     constructor(traveler) {
         this.id = traveler.id
