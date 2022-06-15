@@ -1,5 +1,6 @@
-import TripsRepo from '../src/TripsRepo'
-import { tripsSampleData } from '../test/Sample-trips-data';
+// import TripsRepo from '../src/TripsRepo'
+// import { tripsSampleData } from '../test/Sample-trips-data';
+
 class Destination {
     constructor(data){
         this.destination = data

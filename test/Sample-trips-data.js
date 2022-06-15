@@ -118,84 +118,10 @@ const tripsSampleData = [
     "duration": 7,
     "status": "pending",
     "suggestedActivities": []            
-    }
-];
+    }]
 
-const tripsForOneUserSample = [{
-    "id": 6,
-    "userID": 29,
-    "destinationID": 35,
-    "travelers": 3,
-    "date": "2022/06/29",
-    "duration": 9,
-    "status": "approved",
-    "suggestedActivities": []
-    },
-    {
-    "id": 40,
-    "userID": 29,
-    "destinationID": 50,
-    "travelers": 3,
-    "date": "2020/10/31",
-    "duration": 13,
-    "status": "approved",
-    "suggestedActivities": []
-    },
-    {
-    "id": 192,
-    "userID": 29,
-    "destinationID": 48,
-    "travelers": 5,
-    "date": "2019/09/24",
-    "duration": 17,
-    "status": "approved",
-    "suggestedActivities": []
-    },
-    {
-    "id": 200,
-    "userID": 29,
-    "destinationID": 23,
-    "travelers": 6,
-    "date": "2022/06/29",
-    "duration": 7,
-    "status": "approved",
-    "suggestedActivities": []
-    },
-    {
-    "id": 203,
-    "userID": 29,
-    "destinationID": 12,
-    "travelers": 6,
-    "date": "2021/08/08",
-    "duration": 7,
-    "status": "approved",
-    "suggestedActivities": []
-    },
-    {
-    //fabricated to target present and a pending example for test
-    "id": 400,
-    "userID": 29,
-    "destinationID": 12,
-    "travelers": 6,
-    "date": "2022/06/08",
-    "duration": 7,
-    "status": "approved",
-    "suggestedActivities": []
-    },
-    {
-    "id": 401,
-    "userID": 29,
-    "destinationID": 12,
-    "travelers": 6,
-    "date": "2022/09/08",
-    "duration": 7,
-    "status": "pending",
-    "suggestedActivities": []
-    }   
-    ]
 
-export {
-    tripsSampleData, 
-    tripsForOneUserSample
-}
+
+export default tripsSampleData
+
 

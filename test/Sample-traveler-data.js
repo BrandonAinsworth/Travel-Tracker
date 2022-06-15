@@ -1,4 +1,10 @@
-const travelerSampleData = [{
+const travelerSampleData = [
+    {
+        "id": 29,
+        "name": "Oliviero Tunuy",
+        "travelerType": "shopper"
+    },
+    {
     "id": 1,
     "name": "Ham Leadbeater",
     "travelerType": "relaxer"
@@ -37,7 +43,7 @@ const travelerSampleData = [{
     "id": 8,
     "name": "Carlin O'Reilly",
     "travelerType": "history buff"
-    }];
+    }
+]
 
-    
-    export default travelerSampleData;
+ export default travelerSampleData;
