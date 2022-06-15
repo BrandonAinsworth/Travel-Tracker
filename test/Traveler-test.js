@@ -1,16 +1,12 @@
-import {
-    expect
-} from 'chai';
+import {expect} from 'chai';
 import tripsSampleData from './Sample-trips-data';
 import Traveler from '../src/Traveler';
-import destinationSampleData from './Sample-destination-data';
 import travelerSampleData from './Sample-traveler-data';
 import sampleData from './Sample-data-repo';
 import DataRepo from '../src/DataRepo'
 
 describe('Traveler', () => {
 
-    let destination;
     let travelerRepo;
     let traveler1;
     let dataRepo

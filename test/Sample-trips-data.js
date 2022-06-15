@@ -119,9 +119,4 @@ const tripsSampleData = [
     "status": "pending",
     "suggestedActivities": []            
     }]
-
-
-
 export default tripsSampleData
-
-

@@ -56,23 +56,5 @@ class Traveler {
         let pendingTrips = this.allTrips.filter(trip => trip.status === 'pending')
         return this.pendingTrips = pendingTrips;
     }
-
-    // calculateTotalSpentThisYear(traveler){
-    //     let dataRepo = new DataRepo('')
-    //     console.log('consoleDataREPo',dataRepo)
-    //     let total = traveler.allTrips.reduce((acc, trip) => {
-    //         if(trip.date.includes('2022')){
-    //         let destination = dataRepo.destinations.destinations.find(destination => {
-    //            return (trip.destinationID === destination.id)
-    //         })
-            
-    //         acc += dataRepo.calculateTripCost(trip, destination)
-    //         }
-    //         return acc
-    //     },0)
-    //     traveler.totalSpentForYear = total
-    //     return total
-    // }
-
 }
 export default Traveler;

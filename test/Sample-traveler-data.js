@@ -1,8 +1,8 @@
 const travelerSampleData = [
     {
-        "id": 29,
-        "name": "Oliviero Tunuy",
-        "travelerType": "shopper"
+    "id": 29,
+    "name": "Oliviero Tunuy",
+    "travelerType": "shopper"
     },
     {
     "id": 1,
