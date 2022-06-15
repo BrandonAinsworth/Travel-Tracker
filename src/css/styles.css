@@ -10,9 +10,17 @@ body {
 }
 
 @keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }
 
 
@@ -55,7 +63,8 @@ body {
   padding: 3px;
 }
 
-.button-side1 , .button-side2 {
+.button-side1,
+.button-side2 {
   display: flex;
   flex-direction: row-reverse;
 }
@@ -70,6 +79,14 @@ body {
 }
 
 .trip-image {
-  height: 50em;
-  width: 50em;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 3%;
+}
+
+.trip-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }

@@ -1,6 +1,4 @@
-import {
-  expect
-} from 'chai';
+import {expect} from 'chai';
 import DataRepo from '../src/DataRepo';
 import destinationSampleData from './Sample-destination-data';
 import travelerSampleData from './Sample-traveler-data'
@@ -69,5 +67,4 @@ describe('DataRepo', () => {
 
     expect(dataRepo.calculateTotalSpentThisYear(traveler1)).to.be.equal(27984)
   })
-
 });

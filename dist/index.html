@@ -7,58 +7,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200&display=swap" rel="stylesheet">
   <title>Globetrotter</title>
 </head>
+
 <body>
   <section class="header">
     <img src="./images/around-the-world.png" class="globe" alt="spinning globe">
-    <div tabindex="0"class="welcome">Globetrotter</div>
+    <div tabindex="0" class="welcome">Globetrotter</div>
     <img src="./images/around-the-world.png" class="globe" alt="spinning globe">
-  </section> 
+  </section>
   <hr class="line">
   <div tabindex="0" class="welcome-user">Welcome</div>
   <hr class="line">
-   <section class="interface-wrapper">
-      <section class="buttons">
-        <div class="control-panel">Control Panel</div>
-        <div class="button-side1">
+  <section class="interface-wrapper">
+    <section class="buttons">
+      <div class="control-panel">Control Panel</div>
+      <div class="button-side1">
         <button class="control-button" id="past">Past</button>
         <button class="control-button" id="present">Current</button>
-        </div>
-        <div class="button-side2">
+      </div>
+      <div class="button-side2">
         <button class="control-button" id="upcoming">Upcoming</button>
         <button class="control-button" id="pending">Pending</button>
       </div>
-      </section>
-      <section class="plan-trip">
-        <form class="plan-new-trip">
-          <div tabindex="0"class="plan-header">Plan your next trip!</div><br>
-            <label tabindex="0"for="trip-date">Date:</label>
-            <input tabindex="0" type="date" name='date' id="trip-date" placeholder="YYYY/MM/DD" required /><br>
-            <label tabindex="0"for="trip-duration">Duration:</label>
-            <input tabindex="0" type="number" name="duration" id="trip-duration" placeholder="Days" required /><br>
-            <label tabindex="0" for="trip-travelers">Number of Travlers:</label>
-            <input tabindex="0" type="number" name="travelers" id="trip-travelers" placeholder="Number of Travlers" required /><br>
-            <label tabindex="0" for="trip-destination">Choose a Destination:</label>
-              <select id="destination" name="destinate">
-              </select><br>
-              <div class="costs">Cost with Agent Fee: </div>
-            <input type="submit" aria-label="submit trip button" value="submit" id="submit-trip" ></button> 
-            <!-- class="disable" disabled -->
-        </form>
-      </section>
-      <section class="total-spent">
-        <label tabindex="0" for="total-year">Spent this Year:</label>
-        <div   tabindex="0" class="total-year">Total Spent:</div>
-      </section>
+    </section>
+    <section class="plan-trip">
+      <form class="plan-new-trip">
+        <div tabindex="0" class="plan-header">Plan your next trip!</div><br>
+        <label tabindex="0" for="trip-date">Date:</label>
+        <input tabindex="0" type="date" name='date' id="trip-date" placeholder="YYYY/MM/DD" required /><br>
+        <label tabindex="0" for="trip-duration">Duration:</label>
+        <input tabindex="0" type="number" name="duration" id="trip-duration" placeholder="Days" required /><br>
+        <label tabindex="0" for="trip-travelers">Number of Travlers:</label>
+        <input tabindex="0" type="number" name="travelers" id="trip-travelers" placeholder="Number of Travlers"
+          required /><br>
+        <label tabindex="0" for="trip-destination">Choose a Destination:</label>
+        <select id="destination" name="destinate">
+        </select><br>
+        <div class="costs">Cost with Agent Fee: </div>
+        <input type="submit" aria-label="submit trip button" value="Submit Trip" id="submit-trip">
+      </form>
+    </section>
+    <section class="total-spent">
+      <label tabindex="0" for="total-year">Spent this Year:</label>
+      <div tabindex="0" class="total-year">Total Spent:</div>
+    </section>
   </section>
   <hr class="line">
   <section class="trips-header">
     <div tabindex="0" name='your-trips' class="trips">Trips</div>
+    <hr class="line">
   </section>
   <section class="trips-cards">
-  <div class="catch-error"></div>
+    <div class="catch-error"></div>
   </section>
   <hr class="line">
   <script src="bundle.js"></script>
 
 </body>
+
 </html>
