@@ -9,7 +9,7 @@ describe('Traveler', () => {
 
     let travelerRepo;
     let traveler1;
-    let dataRepo
+    let dataRepo;
 
     beforeEach(() => {
         dataRepo = new DataRepo(sampleData)
@@ -99,7 +99,6 @@ describe('Traveler', () => {
     }]   
 
         expect(traveler1.allTrips).to.deep.equal(tripsForOneUserSample)
-        // expect(dataRepo.returnTripsForCurrentTraveler(1000)).to.deep.equal("You don't have any trips! But worry not, you're in the right place!")
     });
 
     it('should return past trips for current traveler', () => {
