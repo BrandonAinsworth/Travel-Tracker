@@ -1,6 +1,4 @@
-import { expect } from 'chai';
 import DataRepo from '../src/DataRepo';
-import dayjs from "dayjs"
 import { promise } from './apiCalls';
 import Traveler from './Traveler';
 import './css/styles.css';
