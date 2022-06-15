@@ -17,7 +17,7 @@ describe('Traveler', () => {
 
     beforeEach(() => {
         dataRepo = new DataRepo(sampleData)
-        travelerRepo = travelerSampleData
+        travelerRepo = travelerSampleData[0]
         traveler1 = new Traveler(travelerRepo)
     });
 
@@ -30,7 +30,7 @@ describe('Traveler', () => {
     });
 
     it('should return all trips for current traveler', () => {
-        // dataRepo.returnCurrentTravelerById(29)
+        // dataRepo.returnCurrentTravelerById(29)`
         traveler1.returnTripsForCurrentTraveler(tripsSampleData)
         // console.log(traveler1)
     const tripsForOneUserSample = [{
@@ -103,7 +103,7 @@ describe('Traveler', () => {
     "status": "pending",
     "suggestedActivities": []
     }]   
-
+        console.log(traveler1)
         expect(traveler1.allTrips).to.deep.equal(tripsForOneUserSample)
         // expect(dataRepo.returnTripsForCurrentTraveler(1000)).to.deep.equal("You don't have any trips! But worry not, you're in the right place!")
     });
