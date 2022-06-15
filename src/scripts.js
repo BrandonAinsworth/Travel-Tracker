@@ -52,21 +52,20 @@ const id = 10
 getData()
 
 function helloUser(){
-    console.log('HELLO USER')
     let userName = currentTraveler.returnCurrentTravelerFirstName()
     welcomeUser.innerText = `Welcome, ${userName}`
 }
 
 function getData(){
     promise.then(data => {
+        console.log(data)
       dataRepo = new DataRepo(data);
       individual = (dataRepo.returnCurrentTravelerById(id));
       currentTraveler = new Traveler(individual)
       helloUser()
       populateTravelerTrips()
-      getUserTotalSpent()
+    //   getUserTotalSpent()
       populateDestinationOptions()
-    //   console.log()
     })
     .catch(error => {
       console.log(error)
@@ -85,7 +84,8 @@ function populateTravelerTrips(){
 }
 
 function getUserTotalSpent() {
-    let totalSpent = currentTraveler.calculateTotalSpentThisYear()
+    let totalSpent = dataRepo.calculateTotalSpentThisYear()
+    console.log('total spent', totalSpent)
     if(totalSpent === 0){
         totalYearSpent.innerText = "No trips this year"
     } else {

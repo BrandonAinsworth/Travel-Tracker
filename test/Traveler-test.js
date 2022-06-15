@@ -22,8 +22,6 @@ describe('Traveler', () => {
     });
 
     it('should be a function', function () {
-        console.log(traveler1)
-        console.log(dataRepo)
         expect(Traveler).to.be.a('function');
     });
 
@@ -33,7 +31,6 @@ describe('Traveler', () => {
 
     it('should return all trips for current traveler', () => {
         // dataRepo.returnCurrentTravelerById(29)
-        console.log(traveler1.trips)
         traveler1.returnTripsForCurrentTraveler(tripsSampleData)
         // console.log(traveler1)
     const tripsForOneUserSample = [{
