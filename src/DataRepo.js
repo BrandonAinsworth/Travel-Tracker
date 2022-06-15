@@ -9,7 +9,6 @@ class DataRepo {
         this.travelers = data[0]
         this.trips = data[1]
         this.destinations = data[2]
-        this.currentTraveler;
         this.date = dayjs().format('YYYY/MM/DD')
     }
     returnCurrentTravelerById(id) {
@@ -31,10 +30,8 @@ class DataRepo {
         return parseInt(totalWithAgentFee);
     }
 
-    calculateTotalSpentThisYear(id) {
-        const userTrips = this.trips.trips.filter(traveler => traveler.id === id)
-
-        let total = userTrips.reduce((acc, trip) => {
+    calculateTotalSpentThisYear(traveler) {
+        let total = traveler.allTrips.reduce((acc, trip) => {
             if (trip.date.includes('2022')) {
                 let destination = this.destinations.destinations.find(destination => {
                     return (trip.destinationID === destination.id)
@@ -43,8 +40,7 @@ class DataRepo {
             }
             return acc
         }, 0)
-        this.currentTraveler.totalSpentForYear = total
-        console.log('TOTAL', total)
+        traveler.totalSpentForYear = total
         return total
     }
 }

@@ -19,6 +19,7 @@ describe('Traveler', () => {
         dataRepo = new DataRepo(sampleData)
         travelerRepo = travelerSampleData[0]
         traveler1 = new Traveler(travelerRepo)
+        traveler1.returnTripsForCurrentTraveler(tripsSampleData)
     });
 
     it('should be a function', function () {
@@ -103,13 +104,12 @@ describe('Traveler', () => {
     "status": "pending",
     "suggestedActivities": []
     }]   
-        console.log(traveler1)
         expect(traveler1.allTrips).to.deep.equal(tripsForOneUserSample)
         // expect(dataRepo.returnTripsForCurrentTraveler(1000)).to.deep.equal("You don't have any trips! But worry not, you're in the right place!")
     });
 
-    it.skip('should return past trips for current traveler', () => {
-        let userPast = [
+    it('should return past trips for current traveler', () => {
+        let userPast = 
             [{
                     "id": 40,
                     "userID": 29,
@@ -141,8 +141,8 @@ describe('Traveler', () => {
                     "suggestedActivities": []
                 }
             ]
-        ]
-        expect(currentUser.pastTrips).to.deep.equal(userPast)
+        traveler1.returnPastTripsForCurrentTraveler("2022/06/14")
+        expect(traveler1.pastTrips).to.deep.equal(userPast)
     });
 
     it.skip('should return upcoming trips for current traveler', () => {

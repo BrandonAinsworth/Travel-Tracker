@@ -64,7 +64,7 @@ function getData(){
       currentTraveler = new Traveler(individual)
       helloUser()
       populateTravelerTrips()
-    //   getUserTotalSpent()
+      getUserTotalSpent()
       populateDestinationOptions()
     })
     .catch(error => {
@@ -81,11 +81,10 @@ function populateTravelerTrips(){
     currentTraveler.returnUpcomingTripsForCurrentTraveler(dateOfToday)
     currentTraveler.returnCurrentTripsForCurrentTraveler(dateOfToday)
     currentTraveler.returnPendingTripsForCurrentTraveler(dateOfToday)
-}
+}   
 
 function getUserTotalSpent() {
-    let totalSpent = dataRepo.calculateTotalSpentThisYear()
-    console.log('total spent', totalSpent)
+    let totalSpent = dataRepo.calculateTotalSpentThisYear(currentTraveler)
     if(totalSpent === 0){
         totalYearSpent.innerText = "No trips this year"
     } else {
