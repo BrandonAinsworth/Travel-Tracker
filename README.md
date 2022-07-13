@@ -1,5 +1,9 @@
 # GlobeTrotter
 
+<img width="1440" alt="Screen Shot 2022-07-13 at 1 00 28 PM" src="https://user-images.githubusercontent.com/87993138/178829968-3a5783d2-f88a-4def-a2cd-d38cff3da5d1.png">
+
+<img width="1419" alt="Screen Shot 2022-07-13 at 1 02 35 PM" src="https://user-images.githubusercontent.com/87993138/178829974-72cd87dc-5f85-429e-9c23-800bf4b4e508.png">
+
 
 
 ## Table of Contents
